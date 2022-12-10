@@ -1,0 +1,84 @@
+version: '3'
+services:
+#  debug:
+#    image: phpstorm/php-71-apache-xdebug
+#    ports:
+#      - "8085:80"
+#    volumes:
+#      - ./workshop/07_Debugging:/var/www/html
+#    environment:
+#      #For Windows and macOS, replace the line below with `host.docker.internal`, which will automatically resolve to the internal address of the host Docker is running on.
+#      #For Linux, replace the line below with your hostname, which you can obtain by executing `hostname` in Terminal.
+#      XDEBUG_CONFIG: remote_host=<host.docker.internal or your hostname>
+#
+#      #For macOS, if you use a local Homebrew php-fpm installation, port `9000` (which is the default debugging port) may become occupied. PhpStorm will remain silent on starting listening for incoming connections. If this is the case, in the Settings | Languages & Frameworks | PHP | Debug, set the Debug port to 9001, and use the following configuration line instead.
+#
+#      #XDEBUG_CONFIG: remote_host=host.docker.internal, remote_port=9001
+
+#  mysql:
+#    image: mysql
+#    ports:
+#      - "33056:3306"
+#    volumes:
+#      - ./mysql:/docker-entrypoint-initdb.d:ro
+#    environment:
+#      MYSQL_ROOT_PASSWORD: secret #password
+#
+#  nginx:
+#    # используем последний стабильный образ nginx
+#    image: nginx:latest
+#    # маршрутизируем порты
+#    ports:
+#      - "8080:80"
+#      - "443:443"
+#    # монтируем директории, слева директории на основной машине, справа - куда они монтируются в контейнере
+#    volumes:
+#      - ./hosts:/etc/nginx/conf.d
+#      - ./www:/var/www
+#      - ./logs:/var/log/nginx
+#      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+#    # nginx должен общаться с php контейнером
+#    links:
+#      - mysql
+#
+#  apache:
+#    build: ./images
+#    ports:
+#      - "8081:80"
+#    volumes:
+#      - ./images/php:/var/www/html
+#    links:
+#     - mysql
+#     - nginx
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - ./mysql:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "3308:3306"
+
+  nginx:
+    image: nginx
+    restart: always
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/hello-dev.conf
+    ports:
+      - "8080:80"
+    links:
+      - db
+
+  apache:
+    build: ./images/php
+    restart: always
+    volumes:
+      - ./images/php:/var/www/html/
+    ports:
+      - "8081:80"
+    links:
+      - db
+      - nginx
+
