@@ -43,8 +43,9 @@ echo "<p><a href = 'home.php'>Назад</a></p>";
 echo <<<HTML
 <form action="view_table.php" method="post">
     <p><input type="text" name="lesson" placeholder="напишите 'del'" size="25" /></p>
-    <INPUT type="submit" value= "расписание нахуй">
+    <INPUT type="submit" value= "Сгрировать расписание">
 </form>
+
 HTML;
 
 

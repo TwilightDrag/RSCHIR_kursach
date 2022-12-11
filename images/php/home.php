@@ -13,7 +13,7 @@ echo <<<HTML
   <link rel="stylesheet" href="Styles/style.css">
 </head>
 
-<header>Добро пожаловать на <s>генератор расписаний!</s> хуй</header>
+<header>Добро пожаловать на генератор расписаний!</header>
 
 <div class = "ssyl">
     <p><a href = "add_lessons.php">Добавить предметы</a></p>
