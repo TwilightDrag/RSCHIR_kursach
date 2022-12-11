@@ -10,9 +10,9 @@ echo <<<HTML
     </head>
     <body>
     <div class = "container">
-            <p><a href = "home.php" >Назад</a></p>
+            <p><a href = "home.php">Назад</a></p>
             <form method= "POST" action="lesson_to_db.php">
-                <p><input type="text" class="form-control" name="lesson" placeholder="Введите название дисцеплины" size="25" /></p>
+                <p><input type="text" name="lesson" placeholder="Введите место" size="25" /></p>
                 <INPUT type="submit" class="btn btn-success" value= "Отправить">
                 </p>
             </form>

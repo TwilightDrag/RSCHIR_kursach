@@ -1,6 +1,13 @@
 <?php
 $link = mysqli_connect('db', 'root', 'example');
-echo '<link rel="stylesheet" href="Styles/style.css">';
+echo '<head>
+    <link rel="stylesheet" href="Styles/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>';
 
 set_error_handler(function(int $errno, string $errstr) {
     if ((strpos($errstr, 'Undefined array key') === false) && (strpos($errstr, 'Undefined variable') === false)) {
@@ -39,13 +46,15 @@ if($_POST['lesson'] == 'reset') {
 }
 
 
-echo "<p><a href = 'home.php'>Назад</a></p>";
 echo <<<HTML
-<form action="view_table.php" method="post">
-    <p><input type="text" name="lesson" placeholder="напишите 'del'" size="25" /></p>
-    <INPUT type="submit" value= "Сгрировать расписание">
-</form>
-
+<div class = "container">
+<p><a href = 'home.php'>Назад</a></p>
+    <form action="view_table.php" method="post">
+        <p><input type="text" name="lesson" placeholder="напишите 'del'" size="25" />
+        <INPUT type="submit" class="btn btn-success" value= "Сгенировать расписание"></p>
+    </form>
+</div>
+<div class = "container">
 HTML;
 
 
@@ -100,7 +109,8 @@ echo '<table>';
         $para += 1;
         echo '</tr>';
     }
-echo '</table>';
+echo '</table></div>
+';
 
 
 

@@ -1,6 +1,9 @@
 header{
     font-size: 40px;
 }
+.body{
+    background-color: #4A91CE;
+}
 table {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     text-align: center;
@@ -21,4 +24,25 @@ tbody tr:nth-child(2) {
 td {
     padding: 10px;
     color: #8D8173;
+}
+
+.description{
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+}
+.description h1{
+    color:#F97300 ;
+}
+.description p{
+    color: #c6c6c6;
+    font-size: 20px;
+    width: 50%;
+    line-height: 1.5;
+}
+.description button{
+    border:1px  solid #F97300;
+    background:#F97300;
+    color:#fff;
 }
