@@ -11,7 +11,7 @@ echo <<<HTML
     <body>
     <div class = "container">
             <p><a href = "home.php">Назад</a></p>
-            <form method= "POST" action="lesson_to_db.php">
+            <form method= "POST" action="places_to_db.php">
                 <p><input type="text" name="lesson" placeholder="Введите место" size="25" /></p>
                 <INPUT type="submit" class="btn btn-success" value= "Отправить">
                 </p>
