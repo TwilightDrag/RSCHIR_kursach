@@ -10,8 +10,9 @@ set_error_handler(function(int $errno, string $errstr) {
     }
 }, E_WARNING);
 
-$userid = $_GET['loggedUser'];
-$res = mysqli_query($link, "select * from table_list.admins where ID = '$userid'");
+$login = $_POST['login'];
+$psw = $_POST['psw'];
+$res = mysqli_query($link, "select * from table_list.admins where (name = '$login') and (password = '$psw')");
 $result = $res->fetch_all();
 if(!empty($result)) {
     echo <<<HTML
