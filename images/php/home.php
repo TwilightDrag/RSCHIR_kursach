@@ -19,6 +19,7 @@ echo <<<HTML
 </head>
 <title>MyServer</title>
 <header></header>
+
 <div class = "container">
     <h1>Добро пожаловать на генератор расписаний!</h1>
     <div>

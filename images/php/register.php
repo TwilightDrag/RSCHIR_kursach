@@ -15,6 +15,7 @@ echo <<<HTML
     <h1>Регистрация</h1>
     <p>Заполните форму регистрации.</p>
     <hr>
+<p><a href = "home.php">Домой</a></p>
 
     <label for="login"><b>Логин</b></label>
     <input type="text" placeholder="Введите логин" name="login" required>

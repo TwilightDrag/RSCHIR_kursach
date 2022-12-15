@@ -14,7 +14,7 @@ echo <<<HTML
   <div class="container">
     <h1>Вход</h1>
     <hr>
-
+<p><a href = "home.php">Домой</a></p>
     <label for="login"><b>Логин</b></label>
     <input type="text" placeholder="Введите логин" name="login" required>
 
