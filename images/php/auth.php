@@ -1,4 +1,5 @@
 <?php
+$link = mysqli_connect('db', 'root', 'example');
 
 
 echo <<<HTML
@@ -10,7 +11,7 @@ echo <<<HTML
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<form action="action_page.php">
+<form action="admin_table.php?loggedUser=$id">
   <div class="container">
     <h1>Вход</h1>
     <hr>
@@ -20,7 +21,7 @@ echo <<<HTML
 
     <label for="psw"><b>Пароль</b></label>
     <input type="password" placeholder="Введите пароль" name="psw" required>
-<br>
+<br><br>
 
     <button type="submit" class="btn btn-success">Войти</button>
   </div><br>

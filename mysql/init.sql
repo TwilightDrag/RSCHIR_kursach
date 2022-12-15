@@ -52,19 +52,21 @@ INSERT INTO places VALUE (NULL, 'hell');
 
 CREATE TABLE IF NOT EXISTS `admins` (
                                        ID INT NOT NULL AUTO_INCREMENT,
+                                       name VARCHAR(200),
                                        login VARCHAR(200),
                                        password char(20),
                                        PRIMARY KEY (ID)
     );
 
-INSERT INTO admins VALUE (NULL, 'admin', 'admin');
+INSERT INTO admins VALUE (NULL, 'admin', 'Admin' , 'admin');
 
 CREATE TABLE IF NOT EXISTS `users` (
                                         ID INT NOT NULL AUTO_INCREMENT,
+                                        name VARCHAR(200),
                                         login VARCHAR(200),
                                         password char(20),
                                         PRIMARY KEY (ID)
     );
 
-INSERT INTO users VALUE (NULL, 'Leo', '123');
+INSERT INTO users VALUE (NULL, 'Leo', 'leo' , '123');
 
