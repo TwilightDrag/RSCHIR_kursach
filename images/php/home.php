@@ -25,8 +25,8 @@ echo <<<HTML
             <a href = "add_lessons.php" class="btn btn-info">Добавить предметы</a>
             <a href = "add_places.php" class="btn btn-info">Добавить места</a>
             <a href = "view_table.php" class="btn btn-info">посмотреть предметы</a>
-            <a href = "view_table.php" class="btn btn-info">Вход</a>
-            <a href = "view_table.php" class="btn btn-info">Регистрация</a>
+            <a href = "auth.php" class="btn btn-info">Вход</a>
+            <a href = "register.php" class="btn btn-info">Регистрация</a>
 
     </div>
 </div>

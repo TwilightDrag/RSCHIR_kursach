@@ -22,18 +22,18 @@ echo <<<HTML
 HTML;
 
 
-$id = (int)$_GET["id"];
 
-if($id !== NULL) {
+if((int)$_GET["id"]) {
+    $id = $_GET["id"];
    // функция удаления страниц
     $link = mysqli_connect('db', 'root', 'example');
-    $req = "DELETE FROM table_list.rooms WHERE ID = '$id'";
+    $req = "DELETE FROM table_list.places WHERE ID = '$id'";
     mysqli_query($link, $req) or exit(mysqli_error());
 }
 if (isset($_POST)) {
 
     $value =  $_POST['lesson'];
-    $sql = "INSERT INTO table_list.rooms VALUE  (NULL, '$value')";
+    $sql = "INSERT INTO table_list.places VALUE  (NULL, '$value')";
 }
 if(mysqli_query($link, $sql)){
     echo "Записи успешно вставлены.";
@@ -50,13 +50,13 @@ echo <<<HTML
 
 HTML;
 
-$sql = "SELECT * FROM table_list.rooms";
+$sql = "SELECT * FROM table_list.places";
 $result = $link->query($sql);
 echo '<p></p><div class = "container"><table border="1">';
 foreach($result as $row){
     $id = $row['ID'];
-    $name = $row['room'];
-    if($row['room'] != NULL)
+    $name = $row['place'];
+    if($row['place'] != NULL)
     echo "<tr><td>$id</td><td>$name</td></td><td><a href='places_to_db.php?id=$id'>&#9746;</a></td></tr>";
 }
 echo '</table>

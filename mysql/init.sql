@@ -37,19 +37,34 @@ INSERT INTO lessons VALUE (NULL, 'Вы будете страдать на это
 INSERT INTO lessons VALUE (NULL, 'Дополнительные главы вычислительной математики');
 INSERT INTO lessons VALUE (NULL, 'Добавочка тем, кому не хватило первой части курса');
 
-CREATE TABLE IF NOT EXISTS `rooms` (
+CREATE TABLE IF NOT EXISTS `places` (
                                        ID INT NOT NULL AUTO_INCREMENT,
-                                       room VARCHAR(200),
+                                       place VARCHAR(200),
                                        PRIMARY KEY (ID)
 );
 
-INSERT INTO rooms VALUE (NULL, '209-B');
-INSERT INTO rooms VALUE (NULL, '101-A');
-INSERT INTO rooms VALUE (NULL, '102-A');
-INSERT INTO rooms VALUE (NULL, '103-A');
-INSERT INTO rooms VALUE (NULL, '204-B');
-INSERT INTO rooms VALUE (NULL, 'hell');
+INSERT INTO places VALUE (NULL, '209-B');
+INSERT INTO places VALUE (NULL, '101-A');
+INSERT INTO places VALUE (NULL, '102-A');
+INSERT INTO places VALUE (NULL, '103-A');
+INSERT INTO places VALUE (NULL, '204-B');
+INSERT INTO places VALUE (NULL, 'hell');
 
+CREATE TABLE IF NOT EXISTS `admins` (
+                                       ID INT NOT NULL AUTO_INCREMENT,
+                                       login VARCHAR(200),
+                                       password char(20),
+                                       PRIMARY KEY (ID)
+    );
 
+INSERT INTO admins VALUE (NULL, 'admin', 'admin');
 
+CREATE TABLE IF NOT EXISTS `users` (
+                                        ID INT NOT NULL AUTO_INCREMENT,
+                                        login VARCHAR(200),
+                                        password char(20),
+                                        PRIMARY KEY (ID)
+    );
+
+INSERT INTO users VALUE (NULL, 'Leo', '123');
 
