@@ -10,7 +10,7 @@ echo <<<HTML
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<form action="profile.php">
+<form action="adduser.php">
   <div class="container">
     <h1>Регистрация</h1>
     <p>Заполните форму регистрации.</p>
