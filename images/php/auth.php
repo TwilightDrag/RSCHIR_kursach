@@ -1,6 +1,7 @@
 <?php
 $link = mysqli_connect('db', 'root', 'example');
 
+
 set_error_handler(function (int $errno, string $errstr) {
     if ((strpos($errstr, 'Undefined array key') === false) && (strpos($errstr, 'Undefined variable') === false)) {
         return false;
@@ -8,6 +9,7 @@ set_error_handler(function (int $errno, string $errstr) {
         return true;
     }
 }, E_WARNING);
+
 
 echo <<<HTML
 <head>
@@ -18,7 +20,7 @@ echo <<<HTML
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<form method="POST" action="admin_table.php?loggedUser=$id">
+<form method="POST" action="home.php">
   <div class="container">
     <h1>Вход</h1>
     <hr>

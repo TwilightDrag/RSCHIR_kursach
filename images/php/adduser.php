@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 $link = mysqli_connect('db', 'root', 'example');
 
@@ -23,21 +24,25 @@ echo <<<HTML
 <div class = "container">
 HTML;
 
-
-if ((int)$_GET["id"]) {
-    $id = $_GET["id"];
-    // функция удаления страниц
-    $link = mysqli_connect('db', 'root', 'example');
-    $req = "DELETE FROM table_list.users WHERE ID = '$id'";
-    mysqli_query($link, $req) or exit(mysqli_error());
+if($_SESSION['auth']) {
+    if ((int)$_GET["id"]) {
+        $id = $_GET["id"];
+        // функция удаления страниц
+        $link = mysqli_connect('db', 'root', 'example');
+        $req = "DELETE FROM table_list.users WHERE ID = '$id'";
+        mysqli_query($link, $req) or exit(mysqli_error());
+    }
 }
+
 if (isset($_POST)) {
 
     $value = $_POST['login'];
     $psw = $_POST['psw'];
-
-    $sql = "INSERT INTO table_list.users VALUE  (null, 'new user', '$value', '$psw')";
+    $nick = $_POST['nickname'];
+    $sql = "INSERT INTO table_list.users VALUE  (null, '$nick', '$value', '$psw')";
+    $_SESSION['user'] = $nick;
 }
+
 if (mysqli_query($link, $sql)) {
     echo "Записи успешно вставлены.";
 } else {

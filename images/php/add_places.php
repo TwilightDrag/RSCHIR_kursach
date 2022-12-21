@@ -1,6 +1,16 @@
 <?php
+session_start();
 
-echo <<<HTML
+set_error_handler(function(int $errno, string $errstr) {
+    if ((strpos($errstr, 'Undefined array key') === false) && (strpos($errstr, 'Undefined variable') === false)) {
+        return false;
+    } else {
+        return true;
+    }
+}, E_WARNING);
+
+if($_SESSION['auth']) {
+    echo <<<HTML
 
     <head>
         <meta charset="utf-8">
@@ -21,4 +31,14 @@ echo <<<HTML
 
 
 HTML;
+}
+else {
+    echo <<<HTML
+        <div class = "container">
+            <a class="btn btn-info" href = "home.php">Домой</a>
+        </div>
+        <h1>Вы не админ, войдите под учетной записью администратора</h1>
+
+HTML;
+}
 

@@ -10,13 +10,16 @@ echo <<<HTML
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<form action="adduser.php">
+<form method="POST" action="adduser.php">
   <div class="container">
     <h1>Регистрация</h1>
     <p>Заполните форму регистрации.</p>
     <hr>
 <p><a href = "home.php">Домой</a></p>
 
+    <label for="nickname"><b>Имя</b></label>
+    <input type="text" placeholder="Введите Имя" name="nickname" required>
+    
     <label for="login"><b>Логин</b></label>
     <input type="text" placeholder="Введите логин" name="login" required>
 
