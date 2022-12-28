@@ -16,11 +16,11 @@ CREATE TABLE IF NOT EXISTS `lessons_table` (
 );
 
 INSERT INTO lessons_table VALUE (NULL,'1.12' , '1', 'Безопасность жизнедеятельности', '209-A');
-INSERT INTO lessons_table VALUE (NULL,'2.12', '2', 'Моделирование бизнес-процессов', '209-A');
-INSERT INTO lessons_table VALUE (NULL,'3.12', '3', 'Основы сетевых технологий', '209-A');
-INSERT INTO lessons_table VALUE (NULL,'3.12' , '1', 'Безопасность жизнедеятельности', '209-A');
+INSERT INTO lessons_table VALUE (NULL,'2.12', '2', 'Моделирование бизнес-процессов', '210-A');
+INSERT INTO lessons_table VALUE (NULL,'3.12', '3', 'Основы сетевых технологий', '208-A');
+INSERT INTO lessons_table VALUE (NULL,'3.12' , '1', 'Безопасность жизнедеятельности', '209-B');
 INSERT INTO lessons_table VALUE (NULL,'2.12', '2', 'Дополнительные главы вычислительной математики', '209-A');
-INSERT INTO lessons_table VALUE (NULL,'1.12', '3', 'Основы сетевых технологий', '209-A');
+INSERT INTO lessons_table VALUE (NULL,'1.12', '4', 'Основы сетевых технологий', '209-B');
 
 CREATE TABLE IF NOT EXISTS `lessons` (
                                          ID INT NOT NULL AUTO_INCREMENT,
@@ -48,7 +48,6 @@ INSERT INTO places VALUE (NULL, '101-A');
 INSERT INTO places VALUE (NULL, '102-A');
 INSERT INTO places VALUE (NULL, '103-A');
 INSERT INTO places VALUE (NULL, '204-B');
-INSERT INTO places VALUE (NULL, 'hell');
 
 CREATE TABLE IF NOT EXISTS `admins` (
                                        ID INT NOT NULL AUTO_INCREMENT,

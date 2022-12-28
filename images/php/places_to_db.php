@@ -22,6 +22,10 @@ if($_SESSION['auth']) {
 <div class = "container">
 HTML;
 
+    if ($_POST['deletion'] == 'del') {
+        mysqli_query($link, "TRUNCATE table_list.places");
+
+    }
 
     if ((int)$_GET["id"]) {
         $id = $_GET["id"];
@@ -42,6 +46,12 @@ HTML;
     }
     echo <<<HTML
 </div>
+    <div class = "container">
+        <form action="places_to_db.php" method="post">
+            <p><input type="text" name="deletion" placeholder="напишите 'del'" size="25" />
+            <INPUT type="submit" class="btn btn-success" value= "Очистить таблицу"></p>
+        </form>
+    </div>
 <div class = "container">
     <a class="btn btn-info" href = "home.php">Домой</a>
     <a class="btn btn-info" href = "add_places.php">добавить еще</a>

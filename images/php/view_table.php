@@ -39,24 +39,69 @@ if($_SESSION['auth']) {
     if ($_POST['lesson'] == 'reset') {
         mysqli_query($link, "TRUNCATE table_list.lessons_table");
         mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'1.12' , '1', 'Безопасность жизнедеятельности', '209-A')");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12', '2', 'Моделирование бизнес-процессов', '209-A')");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'3.12', '3', 'Основы сетевых технологий', '209-A')");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'3.12' , '1', 'Безопасность жизнедеятельности', '209-A')");
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12', '2', 'Моделирование бизнес-процессов', '210-A')");
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'3.12', '3', 'Основы сетевых технологий', '208-A')");
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'3.12' , '1', 'Безопасность жизнедеятельности', '209-B')");
         mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12', '2', 'Дополнительные главы вычислительной математики', '209-A')");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'1.12', '4', 'Основы сетевых технологий', '209-A')");
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'1.12', '4', 'Основы сетевых технологий', '209-B')");
     }
 
     if ($_POST['lesson'] == 'gen') {
         mysqli_query($link, "TRUNCATE table_list.lessons_table");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'1.12' , '5', 'Безопасность жизнедеятельности', '209-A')");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'5.12', '2', 'Моделирование бизнес-процессов', '209-A')");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'3.12', '3', 'Основы сетевых технологий', '209-A')");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'4.12' , '4', 'Безопасность жизнедеятельности', '209-A')");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12', '5', 'Дополнительные главы вычислительной математики', '209-A')");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'5.12', '6', 'Основы сетевых технологий', '209-A')");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'4.12' , '4', 'Безопасность жизнедеятельности', '209-A')");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12', '1', 'Дополнительные главы вычислительной математики', '209-A')");
-        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12', '6', 'Основы сетевых технологий', '209-A')");
+        $result1 = mysqli_query($link,"
+            SELECT *
+            FROM table_list.lessons
+        ");
+        $result2 = mysqli_query($link,"
+            SELECT *
+            FROM table_list.places
+        ");
+        mysqli_num_rows($result1);
+        mysqli_num_rows($result1);
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'1.12' , $f, 'Безопасность жизнедеятельности', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'5.12', $f, 'Моделирование бизнес-процессов', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'3.12', $f, 'Основы сетевых технологий', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'4.12' , $f, 'Безопасность жизнедеятельности', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12', $f, 'Дополнительные главы вычислительной математики', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'5.12', $f, 'Основы сетевых технологий', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'4.12' , $f, 'Безопасность жизнедеятельности', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12', $f, 'Дополнительные главы вычислительной математики', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12', $f, 'Основы сетевых технологий', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'1.12' , $f, 'Безопасность жизнедеятельности', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12', $f, 'Моделирование бизнес-процессов', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'3.12', $f, 'Основы сетевых технологий', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'3.12' , $f, 'Безопасность жизнедеятельности', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12', $f, 'Дополнительные главы вычислительной математики', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'1.12', $f, 'Основы сетевых технологий', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'4.12', $f, 'Основы сетевых технологий', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12' , $f, 'Безопасность жизнедеятельности', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'1.12', $f, 'Моделирование бизнес-процессов', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'6.12', $f, 'Основы сетевых технологий', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'6.12' , $f, 'Безопасность жизнедеятельности', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'2.12', $f, 'Дополнительные главы вычислительной математики', '209-A')");
+        $f = random_int(1, 6);
+        mysqli_query($link, "INSERT INTO table_list.lessons_table VALUE (NULL,'3.12', $f, 'Основы сетевых технологий', '209-A')");
         $updateName = "UPDATE 
                      table_list.lessons_table, 
                      table_list.lessons
@@ -96,11 +141,6 @@ $res = mysqli_query($link,"
     ORDER BY day
 ") or exit(mysqli_error());
 
-$res2 = mysqli_query($link,"
-    SELECT *
-    FROM table_list.lessons_table
-    ORDER BY 'para'
-") or exit(mysqli_error());
 
 $day_arr = array();
 foreach ($res as $row){
@@ -111,9 +151,23 @@ foreach ($res as $row){
     }
 }
 
+$placesArrSQL = mysqli_query($link,"
+    SELECT *
+    FROM table_list.places;
+") or exit(mysqli_error());
+
+$placesArr = array();
+foreach ($placesArrSQL as $row){
+    if($row['place']!= "")
+    array_push($placesArr, $row['place']);
+}
+
+
 $lesson_arr = array(array());
 foreach ($res as $row) {
-           $lesson_arr[array_search($row['day'], $day_arr)][$row['para']] = $row['name']." ".$row['room'];
+    if($row['name'] != "" and $row['room'] != "") {
+        $lesson_arr[array_search($row['day'], $day_arr)][$row['para']] = $row['name'] . " " . $row['room'];
+    }
 
 }
 
